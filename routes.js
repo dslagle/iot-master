@@ -19,7 +19,7 @@ router.get("/median/:nums", function(request, response) {
 });
 
 router.post("/register", function(request, response) {
-    console.log(`Register request from ${request.clientIp}`);
+    console.log(`Register request from ${request.connection.remoteAddress}`);
     response.json({ success: true });
 });
 
