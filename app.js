@@ -14,6 +14,11 @@ app.use(bp.urlencoded({ extended: true }));
 app.use(bp.json());
 
 app.use(function(request, response, next) {
+    request.ip = request.ip.replace(/^:{0,1}ffff:/, '');
+    next();
+});
+
+app.use(function(request, response, next) {
     response.setHeader("Access-Control-Allow-Origin", "*");
     response.setHeader("Access-Control-Allow-Methods", "POST, GET, PATH, DELETE");
     response.setHeader("Access-Control-Allow-Headers", "Content-Type");
