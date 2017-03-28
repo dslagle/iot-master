@@ -14,7 +14,7 @@ app.use(bp.urlencoded({ extended: true }));
 app.use(bp.json());
 
 app.use(function(request, response, next) {
-    request.ip = request.ip.replace(/^:{1,2}ffff:/, '');
+    request.cip = request.ip.replace(/^:{1,2}ffff:/, '');
     next();
 });
 
