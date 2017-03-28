@@ -3,6 +3,7 @@ const express = require("express");
 const http = require("http");
 const router = require("./routes");
 const path = require("path");
+const ip = require("request-ip");
 
 const app = express();
 const address = "0.0.0.0";
@@ -12,6 +13,7 @@ const server = http.createServer(app);
 
 app.use(bp.urlencoded({ extended: true }));
 app.use(bp.json());
+app.use(ip.mw());
 
 app.use(function(request, response, next) {
     response.setHeader("Access-Control-Allow-Origin", "*");
