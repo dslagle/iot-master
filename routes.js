@@ -19,7 +19,7 @@ router.get("/median/:nums", function(request, response) {
 });
 
 router.post("/register", function(request, response) {
-    console.log(`Register request from ${request.ip}`);
+    console.log(`Register request from ${request.cip}`);
     response.json({ success: true });
 });
 
