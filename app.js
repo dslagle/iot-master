@@ -20,8 +20,6 @@ app.use(function(request, response, next) {
     next();
 });
 
-//app.static(path.join(__dirname, "vpn"));
-
 //app.use('/data', DataRouter(io));
 app.use("/test", router);
 

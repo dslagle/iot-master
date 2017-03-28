@@ -18,4 +18,9 @@ router.get("/median/:nums", function(request, response) {
     response.json({ result: math.median(nums) });
 });
 
+router.post("/register", function(request, response) {
+    console.log(`Register request from ${request.ip}`);
+    response.json({ success: true });
+});
+
 module.exports = router;
