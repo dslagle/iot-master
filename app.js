@@ -10,11 +10,15 @@ const port = 9000;
 
 const server = http.createServer(app);
 
+function formatIP(ip) {
+    return ip.indexOf(":") >= 0 ? `[${ip}]` : ip;
+}
+
 app.use(bp.urlencoded({ extended: true }));
 app.use(bp.json());
 
 app.use(function(request, response, next) {
-    request.cip = request.ip.replace(/^:{1,2}ffff:/, '');
+    request.cip = formatIP(request.ip.replace(/^:{1,2}ffff:/, ''));
     next();
 });
 
@@ -25,7 +29,6 @@ app.use(function(request, response, next) {
     next();
 });
 
-//app.use('/data', DataRouter(io));
 app.use("/test", router);
 
 server.listen(port, () => {

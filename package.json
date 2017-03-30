@@ -9,5 +9,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {
+    "axios": "^0.15.3",
+    "mongodb": "^2.2.25"
+  },
+  "devDependencies": {
+    "@types/mongodb": "^2.1.41"
+  }
 }
